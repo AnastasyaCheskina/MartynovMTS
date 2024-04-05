@@ -1,0 +1,31 @@
+﻿<Page x:Class="MartynovMTS.Views.EditOrAddService"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:System="clr-namespace:System;assembly=mscorlib"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MartynovMTS.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="700"
+      Title="EditOrAddService">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="Стоимость услуг" FontSize="24" FontWeight="Bold" Margin="0 0 0 25"/>
+            <GroupBox Header="Дата" FontSize="20" Margin="0 0 0 10">
+                <DatePicker SelectedDate="{Binding Date, Mode=TwoWay, TargetNullValue={x:Static System:DateTime.Now}}"/>
+            </GroupBox>
+            <GroupBox Header="Город" FontSize="20" Margin="0 0 0 10">
+                <ComboBox x:Name="cbCities" ItemsSource="{Binding AllCities}" SelectedValue="{Binding Id, Mode=TwoWay}" SelectedValuePath="IdCity" DisplayMemberPath="NameCity"/>
+            </GroupBox>
+            <GroupBox Header="Стоимость одной минуты" FontSize="20" Margin="0 0 0 10">
+                <TextBox Text="{Binding CostOneMinute}"/>
+            </GroupBox>
+            <GroupBox Header="Льготная стоимость (с 20:00 до 06:00)" FontSize="20" Margin="0 0 0 10">
+                <TextBox Text="{Binding PreferentialCost}"/>
+            </GroupBox>
+            <Button Content="Сохранить" Name="btnSave" Click="btnSave_Click" Margin="0 0 0 10"/>
+            <Button Tag="{Binding IdServices}" Content="Удалить тариф" Name="btnDelete" Click="btnDelete_Click" Margin="0 0 0 10"/>
+            <Button Content="Вернуться назад" Name="btnGoBack" Click="btnGoBack_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

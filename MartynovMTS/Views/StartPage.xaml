@@ -1,0 +1,17 @@
+﻿<Page x:Class="MartynovMTS.Views.StartPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MartynovMTS.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="700"
+      Title="StartPage">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="Добро пожаловать в систему!" FontWeight="Bold" FontSize="24" TextWrapping="Wrap" Margin="0 0 0 16"/>
+            <TextBlock Text="Выберите нужное действие в панели меню слева. Приятной работы!" FontSize="20" TextWrapping="Wrap" Margin="0 0 0 35"/>
+            <Image Height="491" Width="640" Source="/Images/StartPageImage.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Page>

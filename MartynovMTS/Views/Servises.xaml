@@ -1,0 +1,31 @@
+﻿<Page x:Class="MartynovMTS.Views.Servises"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MartynovMTS.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="700"
+      Title="Servises">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="Стоимость услуг" FontSize="24" FontWeight="Bold" Margin="0 0 0 25"/>
+            <Button x:Name="addNewServiceBtn" Click="addNewServiceBtn_Click" Content="Добавить новый тариф" Margin="0 0 0 30"/>
+            <DataGrid x:Name="tableServices" AutoGenerateColumns="False" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="1*" Header="Название города" Binding="{Binding Cities.NameCity}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="1*" Header="Дата" Binding="{Binding Date, StringFormat=d}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="1*" Header="Цена за минуту" Binding="{Binding CostOneMinute}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="1*" Header="Льготная стоимость" Binding="{Binding PreferentialCost}"></DataGridTextColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Click ="btnChangeInfo_Click" Name="btnChangeInfo" Tag="{Binding IdServices}">Редактировать</Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Page>
